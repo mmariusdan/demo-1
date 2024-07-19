@@ -3,9 +3,12 @@
 import sys
 
 def harmonic_mean(*Y1):
+    """ harmonic mean - function with a variable number of arguments """
     s=0
     if 0.0 in Y1:
       sys.exit('0 cannot be used!')
+    elif not len(Y1):
+      sys.exit('Error: at least one element!')
     else:
         for y1 in Y1:
           s+=1/y1
@@ -13,11 +16,9 @@ def harmonic_mean(*Y1):
     return s
 
 def main():
-  n = int(input("How many elements? "))
-  X1 = list(map(float, input("\nEnter the numbers : ").strip().split()))[:n]
-  print(f"{harmonic_mean(*X1)}")
+    n = int(input("How many elements? "))
+    X1 = list(map(float, input("\nEnter the numbers : ").strip().split()))[:n]
+    print(f"{harmonic_mean(*X1)}")
 
 if __name__ == '__main__':
     main()
-
-
